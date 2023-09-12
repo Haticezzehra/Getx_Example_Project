@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter/services.dart';
+import 'package:getx_example/home.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   runApp(const MyApp());
 }
 
@@ -14,33 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: MyHomePage(),
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.black)),
+      home: Home(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  MyHomePage({super.key});
-  var temp = 0.obs;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("data"),
-        ),
-        body: Column(
-          children: [
-            Obx(() => Text("Artan Deger:$temp")),
-            IconButton(
-                onPressed: () {
-                  temp = temp + 1;
-                },
-                icon: const Icon(Icons.add))
-          ],
-        ));
-  }
-}
+// ignore: must_be_immutable
