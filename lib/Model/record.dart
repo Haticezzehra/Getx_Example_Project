@@ -1,7 +1,10 @@
-class Record {
-  Record({required this.dateTime, required this.weight, this.photo, this.note});
-  final int weight;
-  final DateTime dateTime;
-  final String? note;
-  final String? photo;
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+
+
+@freezed
+class Record  with _$Record {
+ factory Record({required  DateTime  dateTime, required  int weight, String? photo,  String? note})
+ factory Record.fromJson
+  
 }
