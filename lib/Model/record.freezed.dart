@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Record _$RecordFromJson(Map<String, dynamic> json) {
-  return _Record.fromJson(json);
+RecordModel _$RecordModelFromJson(Map<String, dynamic> json) {
+  return _RecordModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Record {
+mixin _$RecordModel {
   DateTime get dateTime => throw _privateConstructorUsedError;
   int get weight => throw _privateConstructorUsedError;
   String? get photo => throw _privateConstructorUsedError;
@@ -27,21 +27,23 @@ mixin _$Record {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RecordCopyWith<Record> get copyWith => throw _privateConstructorUsedError;
+  $RecordModelCopyWith<RecordModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RecordCopyWith<$Res> {
-  factory $RecordCopyWith(Record value, $Res Function(Record) then) =
-      _$RecordCopyWithImpl<$Res, Record>;
+abstract class $RecordModelCopyWith<$Res> {
+  factory $RecordModelCopyWith(
+          RecordModel value, $Res Function(RecordModel) then) =
+      _$RecordModelCopyWithImpl<$Res, RecordModel>;
   @useResult
   $Res call({DateTime dateTime, int weight, String? photo, String? note});
 }
 
 /// @nodoc
-class _$RecordCopyWithImpl<$Res, $Val extends Record>
-    implements $RecordCopyWith<$Res> {
-  _$RecordCopyWithImpl(this._value, this._then);
+class _$RecordModelCopyWithImpl<$Res, $Val extends RecordModel>
+    implements $RecordModelCopyWith<$Res> {
+  _$RecordModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -78,19 +80,22 @@ class _$RecordCopyWithImpl<$Res, $Val extends Record>
 }
 
 /// @nodoc
-abstract class _$$_RecordCopyWith<$Res> implements $RecordCopyWith<$Res> {
-  factory _$$_RecordCopyWith(_$_Record value, $Res Function(_$_Record) then) =
-      __$$_RecordCopyWithImpl<$Res>;
+abstract class _$$_RecordModelCopyWith<$Res>
+    implements $RecordModelCopyWith<$Res> {
+  factory _$$_RecordModelCopyWith(
+          _$_RecordModel value, $Res Function(_$_RecordModel) then) =
+      __$$_RecordModelCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({DateTime dateTime, int weight, String? photo, String? note});
 }
 
 /// @nodoc
-class __$$_RecordCopyWithImpl<$Res>
-    extends _$RecordCopyWithImpl<$Res, _$_Record>
-    implements _$$_RecordCopyWith<$Res> {
-  __$$_RecordCopyWithImpl(_$_Record _value, $Res Function(_$_Record) _then)
+class __$$_RecordModelCopyWithImpl<$Res>
+    extends _$RecordModelCopyWithImpl<$Res, _$_RecordModel>
+    implements _$$_RecordModelCopyWith<$Res> {
+  __$$_RecordModelCopyWithImpl(
+      _$_RecordModel _value, $Res Function(_$_RecordModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -101,7 +106,7 @@ class __$$_RecordCopyWithImpl<$Res>
     Object? photo = freezed,
     Object? note = freezed,
   }) {
-    return _then(_$_Record(
+    return _then(_$_RecordModel(
       dateTime: null == dateTime
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
@@ -124,12 +129,12 @@ class __$$_RecordCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Record implements _Record {
-  _$_Record(
+class _$_RecordModel implements _RecordModel {
+  _$_RecordModel(
       {required this.dateTime, required this.weight, this.photo, this.note});
 
-  factory _$_Record.fromJson(Map<String, dynamic> json) =>
-      _$$_RecordFromJson(json);
+  factory _$_RecordModel.fromJson(Map<String, dynamic> json) =>
+      _$$_RecordModelFromJson(json);
 
   @override
   final DateTime dateTime;
@@ -142,14 +147,14 @@ class _$_Record implements _Record {
 
   @override
   String toString() {
-    return 'Record(dateTime: $dateTime, weight: $weight, photo: $photo, note: $note)';
+    return 'RecordModel(dateTime: $dateTime, weight: $weight, photo: $photo, note: $note)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Record &&
+            other is _$_RecordModel &&
             (identical(other.dateTime, dateTime) ||
                 other.dateTime == dateTime) &&
             (identical(other.weight, weight) || other.weight == weight) &&
@@ -164,25 +169,26 @@ class _$_Record implements _Record {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RecordCopyWith<_$_Record> get copyWith =>
-      __$$_RecordCopyWithImpl<_$_Record>(this, _$identity);
+  _$$_RecordModelCopyWith<_$_RecordModel> get copyWith =>
+      __$$_RecordModelCopyWithImpl<_$_RecordModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecordToJson(
+    return _$$_RecordModelToJson(
       this,
     );
   }
 }
 
-abstract class _Record implements Record {
-  factory _Record(
+abstract class _RecordModel implements RecordModel {
+  factory _RecordModel(
       {required final DateTime dateTime,
       required final int weight,
       final String? photo,
-      final String? note}) = _$_Record;
+      final String? note}) = _$_RecordModel;
 
-  factory _Record.fromJson(Map<String, dynamic> json) = _$_Record.fromJson;
+  factory _RecordModel.fromJson(Map<String, dynamic> json) =
+      _$_RecordModel.fromJson;
 
   @override
   DateTime get dateTime;
@@ -194,6 +200,6 @@ abstract class _Record implements Record {
   String? get note;
   @override
   @JsonKey(ignore: true)
-  _$$_RecordCopyWith<_$_Record> get copyWith =>
+  _$$_RecordModelCopyWith<_$_RecordModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

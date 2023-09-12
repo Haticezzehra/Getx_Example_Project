@@ -3,13 +3,13 @@ part 'record.freezed.dart';
 part 'record.g.dart';
 
 @freezed
-class Record with _$Record {
-  factory Record({
+class RecordModel with _$RecordModel {
+  factory RecordModel({
     required DateTime dateTime,
     required int weight,
     String? photo,
     String? note,
-  }) = _Record;
+  }) = _RecordModel;
 
-  factory Record.fromJson(Map<String, dynamic> json) => _$RecordFromJson(json);
+  factory RecordModel.fromJson(Map<String, dynamic> json) => _$RecordModelFromJson(json);
 }
