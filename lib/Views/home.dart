@@ -1,6 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_example/Views/add_records.dart';
 import 'package:getx_example/Views/graph_view.dart';
 import 'package:getx_example/Views/history_view.dart';
 
@@ -16,10 +17,12 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
           body: currentScreen(),
-          floatingActionButton: const FloatingActionButton(
-            onPressed: null,
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              Get.to(const AddRecord());
+            },
             backgroundColor: Colors.black,
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
