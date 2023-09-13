@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:getx_example/home.dart';
+import 'package:getx_example/Views/home.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -16,11 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           appBarTheme: const AppBarTheme(backgroundColor: Colors.black)),
       home: Home(),
     );
   }
 }
-
-// ignore: must_be_immutable

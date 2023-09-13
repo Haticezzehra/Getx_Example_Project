@@ -11,5 +11,6 @@ class RecordModel with _$RecordModel {
     String? note,
   }) = _RecordModel;
 
-  factory RecordModel.fromJson(Map<String, dynamic> json) => _$RecordModelFromJson(json);
+  factory RecordModel.fromJson(Map<String, dynamic> json) =>
+      _$RecordModelFromJson(json);
 }

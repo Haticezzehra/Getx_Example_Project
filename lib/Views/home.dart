@@ -1,9 +1,8 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_example/graph_view.dart';
-
-import 'package:getx_example/history_view.dart';
+import 'package:getx_example/Views/graph_view.dart';
+import 'package:getx_example/Views/history_view.dart';
 
 // ignore: must_be_immutable
 class Home extends StatelessWidget {
@@ -46,7 +45,7 @@ class Home extends StatelessWidget {
     if (i == 1) {
       currentScreen.value = const GraphScreen();
     } else {
-      currentScreen.value = const HistoryScreen();
+      currentScreen.value = HistoryScreen();
     }
   }
 }
