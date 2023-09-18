@@ -7,7 +7,20 @@ import 'package:numberpicker/numberpicker.dart';
 class AddRecord extends StatelessWidget {
   AddRecord({super.key});
   final _selectedValue = 70.obs;
-  final DateTime _selectedDate = DateTime.now();
+  final _selectedDate = DateTime.now().obs;
+
+  void pickedDate(BuildContext context) async {
+    DateTime? pickedDate = await showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2000),
+        lastDate: DateTime(2100));
+
+    if (pickedDate != null) {
+      _selectedDate.value = pickedDate;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,16 +50,22 @@ class AddRecord extends StatelessWidget {
                 ]))
           ]),
         ),
-        Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          child: Row(children: [
-            const Icon(
-              FontAwesomeIcons.calendar,
-              size: 40,
-            ),
-            Text(DateFormat('EEE MMM d').format(_selectedDate))
-          ]),
+        GestureDetector(
+          onTap: () async {
+            pickedDate(context);
+          },
+          child: Card(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            child: Row(children: [
+              const Icon(
+                FontAwesomeIcons.calendar,
+                size: 40,
+              ),
+              Obx(() =>
+                  Text(DateFormat('EEE MMM d').format(_selectedDate.value)))
+            ]),
+          ),
         )
       ]),
     );
