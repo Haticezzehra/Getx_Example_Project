@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class AddRecord extends StatelessWidget {
   AddRecord({super.key});
   final _selectedValue = 70.obs;
+  final DateTime _selectedDate = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +35,17 @@ class AddRecord extends StatelessWidget {
                   ),
                   const Icon(FontAwesomeIcons.chevronUp, size: 17)
                 ]))
+          ]),
+        ),
+        Card(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          child: Row(children: [
+            const Icon(
+              FontAwesomeIcons.calendar,
+              size: 40,
+            ),
+            Text(DateFormat('EEE MMM d').format(_selectedDate))
           ]),
         )
       ]),
