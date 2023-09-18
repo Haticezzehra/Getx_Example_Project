@@ -1,9 +1,10 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_example/Views/add_records.dart';
+
 import 'package:getx_example/Views/graph_view.dart';
 import 'package:getx_example/Views/history_view.dart';
+import 'package:getx_example/add_record.dart';
 
 // ignore: must_be_immutable
 class Home extends StatelessWidget {
@@ -19,7 +20,7 @@ class Home extends StatelessWidget {
           body: currentScreen(),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              Get.to(const AddRecord());
+              Get.to(AddRecord());
             },
             backgroundColor: Colors.black,
             child: const Icon(Icons.add),
